@@ -54,3 +54,22 @@ services:
     networks:
       - kong-net
     restart: always
+
+  konga:
+    image: pantsel/konga
+    container_name: konga
+    depends_on:
+      - kong
+    ports:
+      - 1337:1337
+    environment:
+      NODE_ENV: "production"
+    networks:
+      - kong-net
+
+networks:
+  kong-net:
+    driver: bridge
+
+volumes:
+  kong-data:
