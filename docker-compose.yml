@@ -108,7 +108,7 @@ services:
         condition: on-failure
       #resources:
        # limits:
-        #  cpus: '0.5' # Membatasi penggunaan CPU menjadi 50%
+        #  cpus: '0.5' # limit cpu
          # memory: '512M'
     volumes:
       - ./custom-auth:/usr/local/share/lua/5.1/kong/plugins/custom-auth
